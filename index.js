@@ -19,6 +19,9 @@ mysqlConnection.connect((err) => {
 })
 app.listen(3000, () => console.log('express server is running at posrt number :3000'));
 
+app.get('/',(req,res)=>{
+    res.json(user)
+})
 //Get all user
 app.get('/user', (req, res) => {
     mysqlConnection.query('SELECT * FROM user ', (err, rows, fields) => {
